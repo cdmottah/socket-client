@@ -1,0 +1,15 @@
+<div class="login">
+  <div class="login__container">
+
+    <h1 class="login__title">Login</h1>
+
+    <form class="login__form" (ngSubmit)="onSubmit($event)">
+      <div class="login__form-group">
+        <label for="username" class="login__label" >Username</label>
+        <input type="text" id="username" class="login__input" [(ngModel)]="name"  [ngModelOptions]="{standalone: true}"/>
+      </div>
+      <button type="submit" class="login__button" >Login</button>
+    </form>
+
+  </div>
+</div>
