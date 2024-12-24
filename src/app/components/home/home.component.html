@@ -1,1 +1,22 @@
-<p>home works!</p>
+<div class="chat">
+
+
+  <div class="chat__header">
+    <div class="chat__title">Bienvenido al chat</div>
+    <button class="chat__close" (click)="exitChat()"> X </button>
+  </div>
+
+  <div class="chat__body">
+    @for (message of (messages$|async); track $index) {
+    <chat-message class="chat__message" [message]="message"></chat-message>
+    }
+  </div>
+
+  <form class="chat__footer form-control" (ngSubmit)="sendMessage($event)">
+    <input type="input" class="form-control__input" [(ngModel)]="messageInput" [ngModelOptions]="{standalone: true}">
+    <button type="submit" class="form-control__button-icon">
+      <img src="./assets/default/defaultSend.svg" class="icon">
+    </button>
+  </form>
+
+</div>

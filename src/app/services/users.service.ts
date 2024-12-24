@@ -30,6 +30,10 @@ export class UsersService {
     return this._httpClient.get(`${this._apiUrl}users`);
   }
 
+  exit(){
+    this.selectedUser$.next(null)
+  }
+
   get selectedUser() { return this._selectedUserFromStorage }
   private get _selectedUserFromStorage() { return this._storageService.getItemOnStorage('selectedUser', null) }
   private set _selectedUserFromStorage(data: string | null) { this._storageService.setItemOnStorage(data, 'selectedUser', null) }

@@ -1,0 +1,11 @@
+@switch (message.type) {
+@case (messageType.Text) {
+
+<img src="./assets/default/defaultClient.svg" alt="avatar" class="chat__photo">
+<div class="chat__user">{{message.from}} </div>
+<div class="chat__time-stamp">{{message.date||'' | dateAgo}}</div>
+<div class="chat__text"> {{message.content.text}}</div>
+
+}
+@case (messageType.Image) {}
+}
